@@ -3,7 +3,7 @@ FROM python:3.11-alpine
 WORKDIR /app
 
 # Másoljuk át az egész solarman kódot
-COPY solarmanmqtt.py /app/
+COPY solarman.py /app/
 COPY requirements.txt /app/
 COPY run.sh /run.sh
 
