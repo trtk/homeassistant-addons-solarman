@@ -5,24 +5,24 @@ echo "Creating config.json..."
 
 cat <<EOF > /app/config.json
 {
-  "name": "${name}",
-  "url": "${url}",
-  "appid": "${appid}",
-  "secret": "${secret}",
-  "username": "${username}",
-  "password": "${password}",
-  "orgId": "${orgId}",
-  "stationId": ${stationId},
-  "inverterId": "${inverterId}",
-  "loggerId": ${loggerId},
-  "interval": ${interval},
-  "debug": ${debug},
+  "name": "${SOLARMAN_NAME}",
+  "url": "${SOLARMAN_URL}",
+  "appid": "${SOLARMAN_APPID}",
+  "secret": "${SOLARMAN_SECRET}",
+  "username": "${SOLARMAN_USERNAME}",
+  "password": "${SOLARMAN_PASSWORD}",
+  "orgId": "${SOLARMAN_ORGID}",
+  "stationId": ${SOLARMAN_STATIONID},
+  "inverterId": "${SOLARMAN_INVERTERID}",
+  "loggerId": ${SOLARMAN_LOGGERID},
+  "interval": ${SOLARMAN_INTERVAL},
+  "debug": ${SOLARMAN_DEBUG},
   "mqtt": {
-    "broker": "${mqtt_broker}",
-    "port": ${mqtt_port},
-    "topic": "${mqtt_topic}",
-    "username": "${mqtt_username}",
-    "password": "${mqtt_password}"
+    "broker": "${MQTT_BROKER}",
+    "port": ${MQTT_PORT},
+    "topic": "${MQTT_TOPIC}",
+    "username": "${MQTT_USERNAME}",
+    "password": "${MQTT_PASSWORD}"
   }
 }
 EOF

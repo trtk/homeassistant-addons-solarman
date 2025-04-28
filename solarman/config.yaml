@@ -1,5 +1,5 @@
 name: Solarman MQTT Bridge
-version: "1.0.15"
+version: "1.0.16"
 slug: solarman
 description: "Bridge between Solarman PV inverter and Home Assistant via MQTT."
 arch:
@@ -46,5 +46,23 @@ schema:
   mqtt_topic: str
   mqtt_username: str
   mqtt_password: password
+env_vars:
+  SOLARMAN_NAME: "My Solar Station"
+  SOLARMAN_URL: "api.solarmanpv.com"
+  SOLARMAN_APPID: "1234567890"
+  SOLARMAN_SECRET: "234abcdefg123456"
+  SOLARMAN_USERNAME: "someuser@example.com"
+  SOLARMAN_PASSWORD: "password"
+  SOLARMAN_ORGID: ""
+  SOLARMAN_STATIONID: 1234567
+  SOLARMAN_INVERTERID: "SA12345MB12345"
+  SOLARMAN_LOGGERID: 789543245
+  SOLARMAN_INTERVAL: 300
+  SOLARMAN_DEBUG: true
+  MQTT_BROKER: "192.168.1.10"
+  MQTT_PORT: 1883
+  MQTT_TOPIC: "solarmanpv"
+  MQTT_USERNAME: "mqtt_user"
+  MQTT_PASSWORD: "mqtt_password"
 build:
   dockerfile: Dockerfile
