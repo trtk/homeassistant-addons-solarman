@@ -1,8 +1,13 @@
 #!/bin/bash
 set -e
 
-echo "Creating config.json..."
+# Debug log, hogy biztosan átkerülnek-e a környezeti változók
+echo "Reading environment variables..."
+echo "Solarman Name: ${SOLARMAN_NAME}"
+echo "Solarman URL: ${SOLARMAN_URL}"
+echo "App ID: ${SOLARMAN_APPID}"
 
+# A konfiguráció generálása JSON formátumban
 cat <<EOF > /app/config.json
 {
   "name": "${SOLARMAN_NAME}",

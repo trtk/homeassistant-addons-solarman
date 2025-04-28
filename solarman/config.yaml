@@ -1,5 +1,5 @@
 name: Solarman MQTT Bridge
-version: "1.0.16"
+version: "1.0.17"
 slug: solarman
 description: "Bridge between Solarman PV inverter and Home Assistant via MQTT."
 arch:
@@ -10,59 +10,111 @@ startup: application
 boot: auto
 init: false
 panel_icon: mdi:solar-power
-options:
-  name: "Solarman"
-  url: "globalapi.solarmanpv.com"
-  appid: ""
-  secret: ""
-  username: ""
-  password: ""
-  orgId: ""
-  stationId: 0
-  inverterId: ""
-  loggerId: 0
-  interval: 300
-  debug: false
-  mqtt_broker: "10.10.10.10"
-  mqtt_port: 1883
-  mqtt_topic: "solarmanpv"
-  mqtt_username: ""
-  mqtt_password: ""
-schema:
-  name: str
-  url: str
-  appid: str
-  secret: str
-  username: str
-  password: password
-  orgId: str
-  stationId: int
-  inverterId: str
-  loggerId: int
-  interval: int
-  debug: bool
-  mqtt_broker: str
-  mqtt_port: int
-  mqtt_topic: str
-  mqtt_username: str
-  mqtt_password: password
+config:
+  solarman_name:
+    name: "Solar Station Name"
+    description: "The name of the solar station"
+    default: "My Solarman Station"
+    required: true
+  solarman_url:
+    name: "Solarman API URL"
+    description: "The Solarman API URL"
+    default: "globalapi.solarmanpv.com"
+    required: true
+  appid:
+    name: "Solarman App ID"
+    description: "Solarman App ID"
+    default: "1234567890"
+    required: true
+  secret:
+    name: "Solarman Secret"
+    description: "Solarman Secret"
+    default: "234abcdefg123456"
+    required: true
+  username:
+    name: "Solarman Username"
+    description: "The username for the Solarman API"
+    default: "someuser@example.com"
+    required: true
+  password:
+    name: "Solarman Password"
+    description: "The password for the Solarman API"
+    default: "password"
+    required: true
+  orgId:
+    name: "Solarman Org ID"
+    description: "The organization ID"
+    default: ""
+    required: true
+  stationId:
+    name: "Station ID"
+    description: "The Solarman Station ID"
+    default: 1234567
+    required: true
+  inverterId:
+    name: "Inverter ID"
+    description: "The inverter ID"
+    default: "SA12345MB12345"
+    required: true
+  loggerId:
+    name: "Logger ID"
+    description: "The logger ID"
+    default: 789543245
+    required: true
+  interval:
+    name: "Data Interval"
+    description: "The data collection interval in seconds"
+    default: 300
+    required: true
+  debug:
+    name: "Debug Mode"
+    description: "Enable or disable debug mode"
+    default: true
+    required: true
+  mqtt_broker:
+    name: "MQTT Broker IP"
+    description: "IP address of the MQTT broker"
+    default: "10.10.10.10"
+    required: true
+  mqtt_port:
+    name: "MQTT Broker Port"
+    description: "Port number of the MQTT broker"
+    default: 1883
+    required: true
+  mqtt_topic:
+    name: "MQTT Topic"
+    description: "MQTT topic for the messages"
+    default: "solarmanpv"
+    required: true
+  mqtt_username:
+    name: "MQTT Username"
+    description: "Username for the MQTT broker"
+    default: "mqtt_user"
+    required: true
+  mqtt_password:
+    name: "MQTT Password"
+    description: "Password for the MQTT broker"
+    default: "mqtt_password"
+    required: true
+
+# Környezeti változók beállítása
 env_vars:
-  SOLARMAN_NAME: "My Solar Station"
-  SOLARMAN_URL: "api.solarmanpv.com"
-  SOLARMAN_APPID: "1234567890"
-  SOLARMAN_SECRET: "234abcdefg123456"
-  SOLARMAN_USERNAME: "someuser@example.com"
-  SOLARMAN_PASSWORD: "password"
-  SOLARMAN_ORGID: ""
-  SOLARMAN_STATIONID: 1234567
-  SOLARMAN_INVERTERID: "SA12345MB12345"
-  SOLARMAN_LOGGERID: 789543245
-  SOLARMAN_INTERVAL: 300
-  SOLARMAN_DEBUG: true
-  MQTT_BROKER: "192.168.1.10"
-  MQTT_PORT: 1883
-  MQTT_TOPIC: "solarmanpv"
-  MQTT_USERNAME: "mqtt_user"
-  MQTT_PASSWORD: "mqtt_password"
+  SOLARMAN_NAME: solarman_name
+  SOLARMAN_URL: solarman_url
+  SOLARMAN_APPID: appid
+  SOLARMAN_SECRET: secret
+  SOLARMAN_USERNAME: username
+  SOLARMAN_PASSWORD: password
+  SOLARMAN_ORGID: orgId
+  SOLARMAN_STATIONID: stationId
+  SOLARMAN_INVERTERID: inverterId
+  SOLARMAN_LOGGERID: loggerId
+  SOLARMAN_INTERVAL: interval
+  SOLARMAN_DEBUG: debug
+  MQTT_BROKER: mqtt_broker
+  MQTT_PORT: mqtt_port
+  MQTT_TOPIC: mqtt_topic
+  MQTT_USERNAME: mqtt_username
+  MQTT_PASSWORD: mqtt_password
 build:
   dockerfile: Dockerfile
