@@ -29,6 +29,7 @@ def load_config(file):
     """
     with open(file, "r", encoding="utf-8") as config_file:
         config = json.load(config_file)
+        print(config)
         return config
 
 
