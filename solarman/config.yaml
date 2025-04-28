@@ -12,7 +12,7 @@ init: false
 panel_icon: mdi:solar-power
 options:
   name: "Solarman"
-  url: "api.solarmanpv.com"
+  url: "globalapi.solarmanpv.com"
   appid: ""
   secret: ""
   username: ""
