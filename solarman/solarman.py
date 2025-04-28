@@ -228,7 +228,8 @@ if __name__ == "__main__":
     
     if sys.version_info < (3, 5):
         raise Exception("🐍 This script requires Python 3.5+")
-
+    teszt = int(os.getenv("url", 1))
+    print(teszt)
     print(f"{time_stamp()}: ⚡ Starting Solarman data fetching...")
 
     config_file = CONFIG_PATH + "config.json"
