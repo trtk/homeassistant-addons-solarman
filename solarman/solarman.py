@@ -11,7 +11,7 @@ import os
 import sys
 import time
 import signal
-import solarman.solarman_HA_addon.solarman.mqtt as mqtt
+import mqtt
 
 CONFIG_PATH = os.environ.get('CONFIG_PATH', os.getcwd() + "/")
 
