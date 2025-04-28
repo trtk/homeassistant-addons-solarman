@@ -20,4 +20,5 @@ schema:
   mqtt_username: str
   mqtt_password: password
   solarman_sn: str
-image: ""
+build:
+  dockerfile: Dockerfile
