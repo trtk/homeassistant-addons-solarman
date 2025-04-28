@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 
 # A run.sh script indítja a kódot
-CMD [ "/run.sh" ]
+CMD ["sh", "/run.sh"]
