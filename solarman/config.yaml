@@ -1,5 +1,5 @@
 name: Solarman MQTT Bridge
-version: "1.0.17"
+version: "1.0.18"
 slug: solarman
 description: "Bridge between Solarman PV inverter and Home Assistant via MQTT."
 arch:
@@ -10,7 +10,7 @@ startup: application
 boot: auto
 init: false
 panel_icon: mdi:solar-power
-config:
+options:
   solarman_name:
     name: "Solar Station Name"
     description: "The name of the solar station"
