@@ -28,4 +28,4 @@ cat <<EOF > /app/config.json
 EOF
 
 echo "Starting Solarman MQTT Bridge..."
-python3 /app/solarmanmqtt.py --config /app/config.json
+python3 /app/solarman.py --config /app/config.json
