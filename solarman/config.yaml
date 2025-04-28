@@ -1,5 +1,5 @@
 name: Solarman MQTT Bridge
-version: "1.0.7"
+version: "1.0.8"
 slug: solarman
 description: "Bridge between Solarman PV inverter and Home Assistant via MQTT."
 arch:
