@@ -1,8 +1,9 @@
 #!/bin/bash
+set -e
 
 echo "Creating config.json..."
 
-cat <<EOF > /config.json
+cat <<EOF > /app/config.json
 {
   "name": "${name}",
   "url": "${url}",
@@ -27,4 +28,4 @@ cat <<EOF > /config.json
 EOF
 
 echo "Starting Solarman MQTT Bridge..."
-python3 solarmanmqtt.py --config /config.json
+python3 /app/solarmanmqtt.py --config /app/config.json
