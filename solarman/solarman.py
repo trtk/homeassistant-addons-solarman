@@ -14,6 +14,16 @@ import signal
 import mqtt
 
 CONFIG_PATH = os.environ.get('CONFIG_PATH', os.getcwd() + "/")
+def read_config(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            config_data = file.read()
+            print("Config fájl tartalma:\n")
+            print(config_data)
+    except FileNotFoundError:
+        print(f"Hiba: A megadott fájl nem található: {file_path}")
+    except Exception as e:
+        print(f"Hiba történt a fájl olvasása közben: {e}")
 
 def signal_handler(signal, frame):
     print(f"{time_stamp()}: 🛑 [SIGINT] Exiting...")
@@ -222,6 +232,7 @@ if __name__ == "__main__":
     print(f"{time_stamp()}: ⚡ Starting Solarman data fetching...")
 
     config_file = CONFIG_PATH + "config.json"
+    read_config(config_file)
 
     print(f"{time_stamp()}: 🕵️  Loading config file: {config_file}")
 
